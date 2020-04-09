@@ -50,31 +50,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- allertify lib -->
-
-    <!-- JavaScript -->
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-    <!-- Default theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
-    <!-- Semantic UI theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
-
-    <!-- 
-        RTL version
-    -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"/>
-    <!-- Default theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"/>
-    <!-- Semantic UI theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.rtl.min.css"/>
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.rtl.min.css"/>
-    <!-- allertify lib -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/plugins/css/bootstrap.min.css" />
     <!-- Animate CSS-->
@@ -129,28 +104,6 @@
       href="assets/css/colors/yellow.css"
       title="yellow"
     />
-    <script type="text/javascript">
-    $('#contactForm').submit(function (e) {
-    var first_name = document.getElementById('name'),
-        last_name = document.getElementById('L_name'),
-        email = document.getElementById('email'),
-        msg = document.getElementById('message');
-        console.log(first_name+" "+last_name+" "+email+ " "+msg);
-    // if (first_name.value == "" || last_name.value == "" || email.value == "" || msg.value == "") {
-    //     alertfy.error("please check your entries!");
-    // } else {
-    //     $.ajax({
-    //         url: "https://formspree.io/acgy1029@gmail.com",
-    //         method: "POST",
-    //         data: $(this).serialize(),
-    //         dataType: "json"
-    //     })
-    //     e.preventDefault();
-    //     $(this).get(0).reset()
-    //     alertfy.success('Message sent.')
-    // }
-});
-    </script>
   </head>
   <body class="white-vertion black-bg">
     <!-- Start Loader -->
@@ -1766,8 +1719,6 @@
                     id="contactForm"
                     class="single-form quate-form wow fadeInUp"
                     data-toggle="validator"
-                    action="https://formspree.io/acgy1029@gmail.com"
-                    method="POST"
                   >
                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                     <div class="row">
@@ -1920,6 +1871,5 @@
     <!-- Custom Scripts-->
     <script src="assets/js/map-init.js"></script>
     <script src="assets/js/custom-scripts.js"></script>
-    <!-- <script src="assets/js/contactUs.js"></script> -->
   </body>
 </html>
