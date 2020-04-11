@@ -371,6 +371,7 @@
     } else {
       // everything looks good!
       event.preventDefault();
+      console.log("in the submit form block");
       submitForm();
     }
   });
