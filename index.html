@@ -62,6 +62,53 @@
     <!-- Custom CSS-->
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        // get the form elements defined in your form HTML above
+
+        var form = document.getElementById("my-form");
+        var button = document.getElementById("my-form-button");
+        var status = document.getElementById("my-form-status");
+
+        // Success and Error functions for after the form is submitted
+
+        function success() {
+          form.reset();
+          button.style = "display: none ";
+          status.innerHTML = "Thanks!";
+        }
+
+        function error() {
+          status.innerHTML = "Oops! There was a problem.";
+        }
+
+        // handle the form submission event
+
+        form.addEventListener("submit", function (ev) {
+          ev.preventDefault();
+          var data = new FormData(form);
+          ajax(form.method, form.action, data, success, error);
+        });
+      });
+
+      // helper function for sending an AJAX request
+
+      function ajax(method, url, data, success, error) {
+        console.log("---------->" + url + " " + method + " " + data);
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return;
+          if (xhr.status === 200) {
+            success(xhr.response, xhr.responseType);
+          } else {
+            error(xhr.status, xhr.response, xhr.responseType);
+          }
+        };
+        xhr.send(data);
+      }
+    </script>
 
     <!-- Colors -->
     <link
@@ -324,8 +371,8 @@
                 data-wow-delay="0.2s"
               >
                 Hello, I’m a Ravikant Pal, full stack web-developer based on
-                Bangaluru. I have 0 year 6 months experience in web site design &
-                building and customization. Also I am good at
+                Bangaluru. I have 0 year 6 months experience in web site design
+                & building and customization. Also I am good at
               </p>
               <div
                 class="mh-about-tag wow fadeInUp"
@@ -406,9 +453,9 @@
               <i class="fa fa-code iron-color"></i>
               <h3>Web Development</h3>
               <p>
-                Currently, I'm working on the web applications only. </br> I'm
-                also open for Android App Development. You can find all my web
-                projects on my github profile. Please find the link below.
+                Currently, I'm working on the web applications only. <br />
+                I'm also open for Android App Development. You can find all my
+                web projects on my github profile. Please find the link below.
               </p>
             </div>
           </div>
@@ -421,10 +468,11 @@
               <i class="fa fa-object-ungroup sky-color"></i>
               <h3>App Development</h3>
               <p>
-                I make Android Application whenever I feel free.
-                My final year project was based on the Android App (AR-MUSIC-KIT).
-                It uses augmented reality to detect the sound nodes and make corresponding sound. 
-                And My current ongoing project on android is Cript-Arithmetic-Calculator.
+                I make Android Application whenever I feel free. My final year
+                project was based on the Android App (AR-MUSIC-KIT). It uses
+                augmented reality to detect the sound nodes and make
+                corresponding sound. And My current ongoing project on android
+                is Cript-Arithmetic-Calculator.
               </p>
             </div>
           </div>
@@ -1703,8 +1751,7 @@
                       </div>
                       <div class="each-info media-body">
                         <h4>Phone</h4>
-                        <a href="tel:+917007381418">+91 (700)-7381-418</a
-                        ><br />
+                        <a href="tel:+917007381418">+91 (700)-7381-418</a><br />
                         <a href="tel:+918953149094">+91 (895)-3149-094</a>
                       </div>
                     </div>
@@ -1716,9 +1763,11 @@
                   data-wow-delay="0.2s"
                 >
                   <form
-                    id="contactForm"
+                    id="contact-us-form"
                     class="single-form quate-form wow fadeInUp"
                     data-toggle="validator"
+                    action="https://formspree.io/xjveqpze"
+                    method="POST"
                   >
                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                     <div class="row">

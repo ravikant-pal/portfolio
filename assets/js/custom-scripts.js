@@ -363,7 +363,7 @@
   |=================
   */
 
-  $("#contactForm").validator().on("submit", function (event) {
+  $("#contact-us-form").validator().on("submit", function (event) {
     if (event.isDefaultPrevented()) {
       // handle the invalid form...
       formError();
@@ -371,35 +371,37 @@
     } else {
       // everything looks good!
       event.preventDefault();
-      console.log("in the submit form block");
       submitForm();
     }
   });
 
   function submitForm() {
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var message = $("#message").val();
-    $.ajax({
-      type: "POST",
-      url: "https://formspree.io/xeqlrbj",
-      data: "name=" + name + "&email=" + email + "&message=" + message,
-      success: function (text) {
-        if (text == "success") {
-          formSuccess();
-        } else {
-          formError();
-          submitMSG(false, text);
-        }
+    var form1 = $("#contact-us-form").get(0);
+    var data = new FormData(form1);
+    ajax(form1.method, form1.action, data);
+  }
+
+  function ajax(method, url, data) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        formSuccess();
+      } else {
+        formError();
+        submitMSG(false, text);
       }
-    });
+    };
+    xhr.send(data);
   }
   function formSuccess() {
-    $("#contactForm")[0].reset();
+    $("#contact-us-form")[0].reset();
     submitMSG(true, "Message Sent!")
   }
   function formError() {
-    $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+    $("#contact-us-form").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
       $(this).removeClass();
     });
   }
