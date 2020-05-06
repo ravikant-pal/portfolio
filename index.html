@@ -62,54 +62,6 @@
     <!-- Custom CSS-->
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
-    <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        // get the form elements defined in your form HTML above
-
-        var form = document.getElementById("my-form");
-        var button = document.getElementById("my-form-button");
-        var status = document.getElementById("my-form-status");
-
-        // Success and Error functions for after the form is submitted
-
-        function success() {
-          form.reset();
-          button.style = "display: none ";
-          status.innerHTML = "Thanks!";
-        }
-
-        function error() {
-          status.innerHTML = "Oops! There was a problem.";
-        }
-
-        // handle the form submission event
-
-        form.addEventListener("submit", function (ev) {
-          ev.preventDefault();
-          var data = new FormData(form);
-          ajax(form.method, form.action, data, success, error);
-        });
-      });
-
-      // helper function for sending an AJAX request
-
-      function ajax(method, url, data, success, error) {
-        console.log("---------->" + url + " " + method + " " + data);
-        var xhr = new XMLHttpRequest();
-        xhr.open(method, url);
-        xhr.setRequestHeader("Accept", "application/json");
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState !== XMLHttpRequest.DONE) return;
-          if (xhr.status === 200) {
-            success(xhr.response, xhr.responseType);
-          } else {
-            error(xhr.status, xhr.response, xhr.responseType);
-          }
-        };
-        xhr.send(data);
-      }
-    </script>
-
     <!-- Colors -->
     <link
       rel="alternate stylesheet"
@@ -201,6 +153,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#mh-about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#mh-projects">Projects</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#mh-skills">Skills</a>
@@ -405,6 +360,7 @@
                 data-wow-duration="0.8s"
                 data-wow-delay="0.4s"
                 download="Ravikant"
+                target="_blank"
                 >Downlaod CV <i class="fa fa-download"></i
               ></a>
             </div>
@@ -485,7 +441,10 @@
           FEATURE PROJECTS
         ===================
         -->
-    <!-- <section class="mh-featured-project image-bg featured-img-one">
+    <section
+      class="mh-featured-project image-bg featured-img-one"
+      id="mh-projects"
+    >
       <div class="img-color-overlay">
         <div class="container">
           <div class="row section-separator">
@@ -493,9 +452,9 @@
               <h3>Featured Projects</h3>
             </div>
             <div class="col-sm-12">
-              <div class="mh-single-project-slide-by-side row"> -->
-    <!-- Project Items -->
-    <!-- <div class="col-sm-12 mh-featured-item">
+              <div class="mh-single-project-slide-by-side row">
+                <!-- Project Items -->
+                <div class="col-sm-12 mh-featured-item">
                   <div class="row">
                     <div class="col-sm-7">
                       <div
@@ -504,7 +463,7 @@
                         data-wow-delay="0.2s"
                       >
                         <img
-                          src="assets/images/p-2.png"
+                          src="assets/images/project-screen-shots/Screenshot 2020-05-06 at 15.08.25.png"
                           alt=""
                           class="img-fluid"
                         />
@@ -517,14 +476,14 @@
                           data-wow-duration="0.8s"
                           data-wow-delay="0.4s"
                         >
-                          Web Design
+                          Web Application
                         </h4>
                         <h2
                           class="wow fadeInUp"
                           data-wow-duration="0.8s"
                           data-wow-delay="0.5s"
                         >
-                          Wrap
+                          Repoph App
                         </h2>
                         <span
                           class="wow fadeInUp"
@@ -537,21 +496,30 @@
                           data-wow-duration="0.8s"
                           data-wow-delay="0.7s"
                         >
-                          Stamp is a clean and elegant Multipurpose Landing Page
-                          Template. It will fit perfectly for Startup, Web App
-                          or any type of Web Services. It has 4 background
-                          styles with 6 homepage styles. 6 pre-defined color
-                          scheme. All variations are organized separately so you
-                          can use / customize the template very easily.
+                          It is the one of my best Web Application. It's called
+                          Repoph. Where you can hire people or get hired by
+                          people for small amount of time (Hourley). It has two
+                          roles Service Provider (provides the service and make
+                          money) and Service Consumer (takes the service and pay
+                          for it). The best feature is you can hire or get hired
+                          for an Hour. You can change the role any point of time
+                          to get hired or hire people. It has some unique
+                          features like searching, sorting filtering and
+                          pagination. Every user have freedom to accept the
+                          request or decline. If your profile is completed and
+                          you are Service Provider you will automatically show
+                          to the market place. And every time you can see your
+                          history.
                         </p>
                         <a
-                          href=""
+                          href="https://repoph.herokuapp.com"
                           class="btn btn-fill wow fadeInUp"
                           data-wow-duration="0.8s"
                           data-wow-delay="0.7s"
+                          target="_blank"
                           >View Details</a
                         >
-                        <div
+                        <!-- <div
                           class="mh-testimonial mh-project-testimonial wow fadeInUp"
                           data-wow-duration="0.8s"
                           data-wow-delay="0.9s"
@@ -580,13 +548,13 @@
                             >
                             <cite>- Shane Kavanagh</cite>
                           </blockquote>
-                        </div>
+                        </div> -->
                       </div>
                     </div>
                   </div>
-                </div> -->
-    <!-- Project Items -->
-    <!-- <div class="col-sm-12 mh-featured-item">
+                </div>
+                <!-- Project Items -->
+                <div class="col-sm-12 mh-featured-item">
                   <div class="row">
                     <div class="col-sm-7">
                       <div
@@ -595,7 +563,7 @@
                         data-wow-delay="0.2s"
                       >
                         <img
-                          src="assets/images/p-2.png"
+                          src="assets/images/project-screen-shots/Screenshot 2020-05-06 at 15.54.12.png"
                           alt=""
                           class="img-fluid"
                         />
@@ -608,14 +576,14 @@
                           data-wow-duration="0.8s"
                           data-wow-delay="0.4s"
                         >
-                          Web Design
+                          Web Application
                         </h4>
                         <h2
                           class="wow fadeInUp"
                           data-wow-duration="0.8s"
                           data-wow-delay="0.5s"
                         >
-                          Wrap
+                          zomato clone
                         </h2>
                         <span
                           class="wow fadeInUp"
@@ -628,21 +596,25 @@
                           data-wow-duration="0.8s"
                           data-wow-delay="0.7s"
                         >
-                          Stamp is a clean and elegant Multipurpose Landing Page
-                          Template. It will fit perfectly for Startup, Web App
-                          or any type of Web Services. It has 4 background
-                          styles with 6 homepage styles. 6 pre-defined color
-                          scheme. All variations are organized separately so you
-                          can use / customize the template very easily.
+                          As you know Zomato is the one of best application for
+                          food ordering. Where you can order food online from
+                          your choiced restaurant. I tried to clone the entire
+                          app and the result is in front of you. One extra think
+                          I made here to show restaurant near you. During
+                          development of this project I learned a lot. It has
+                          someunique features like searching, sorting and
+                          filtering And you can also manage your orders.I also
+                          implemented the restaurant services.
                         </p>
                         <a
-                          href=""
+                          href="https://blog-app-alok.herokuapp.com/"
                           class="btn btn-fill wow fadeInUp"
                           data-wow-duration="0.8s"
                           data-wow-delay="0.7s"
+                          target="_blank"
                           >View Details</a
                         >
-                        <div
+                        <!-- <div
                           class="mh-testimonial mh-project-testimonial wow fadeInUp"
                           data-wow-duration="0.8s"
                           data-wow-delay="0.9s"
@@ -671,13 +643,13 @@
                             >
                             <cite>- Shane Kavanagh</cite>
                           </blockquote>
-                        </div>
+                        </div> -->
                       </div>
                     </div>
                   </div>
-                </div> -->
-    <!-- Project Items -->
-    <!-- <div class="col-sm-12 mh-featured-item">
+                </div>
+                <!-- Project Items -->
+                <div class="col-sm-12 mh-featured-item">
                   <div class="row">
                     <div class="col-sm-7">
                       <div
@@ -686,7 +658,7 @@
                         data-wow-delay="0.2s"
                       >
                         <img
-                          src="assets/images/p-2.png"
+                          src="assets/images/project-screen-shots/Screenshot 2020-05-06 at 15.55.50.png"
                           alt=""
                           class="img-fluid"
                         />
@@ -699,14 +671,14 @@
                           data-wow-duration="0.8s"
                           data-wow-delay="0.4s"
                         >
-                          Web Design
+                          Web Application
                         </h4>
                         <h2
                           class="wow fadeInUp"
                           data-wow-duration="0.8s"
                           data-wow-delay="0.5s"
                         >
-                          Wrap
+                          Blog App
                         </h2>
                         <span
                           class="wow fadeInUp"
@@ -719,21 +691,24 @@
                           data-wow-duration="0.8s"
                           data-wow-delay="0.7s"
                         >
-                          Stamp is a clean and elegant Multipurpose Landing Page
-                          Template. It will fit perfectly for Startup, Web App
-                          or any type of Web Services. It has 4 background
-                          styles with 6 homepage styles. 6 pre-defined color
-                          scheme. All variations are organized separately so you
-                          can use / customize the template very easily.
+                          Blog is a clean and elegant Blogging App. Where you
+                          can read article written by the writers. You can
+                          create your own post and publish on the platform. It
+                          is Web App or a type of Web Services. It has some
+                          unique features like searching, sorting filtering and
+                          pagination. And You can Also manage your every post
+                          like edit or delete. I used the black-yellow theme for
+                          this Web Application.
                         </p>
                         <a
-                          href=""
+                          href="https://zomatoclone.herokuapp.com"
                           class="btn btn-fill wow fadeInUp"
                           data-wow-duration="0.8s"
                           data-wow-delay="0.7s"
+                          target="_blank"
                           >View Details</a
                         >
-                        <div
+                        <!-- <div
                           class="mh-testimonial mh-project-testimonial wow fadeInUp"
                           data-wow-duration="0.8s"
                           data-wow-delay="0.9s"
@@ -762,18 +737,18 @@
                             >
                             <cite>- Shane Kavanagh</cite>
                           </blockquote>
-                        </div>
+                        </div> -->
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div> -->
-    <!-- End: .row -->
-    <!-- </div>
+          </div>
+          <!-- End: .row -->
+        </div>
       </div>
-    </section> -->
+    </section>
 
     <!--
         ===================
